@@ -1,0 +1,49 @@
+#table-list-product {
+    width: 500px;
+    background-color: antiquewhite;
+    border-collapse: collapse;
+    float: left;
+}
+
+#table-add-product {
+    border-collapse: collapse;
+    width: 400px;
+    background-color: cadetblue;
+    float: left;
+
+}
+
+#submit-add-product, #submit-edit-product {
+    background-color: chartreuse;
+    padding: 10px 20px;
+    margin-left: 10px;
+    float: left;
+}
+
+input {
+    width: 90%;
+    height: 60%;
+}
+
+td, tr ,th{
+    border: 1px solid black;
+    height: 50px;
+    text-align: center;
+}
+.t-header {
+    background-color: royalblue;
+    color: white;
+}
+.delete-product {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border: 0;
+}
+
+.edit-product {
+    background-color: cornflowerblue;
+    color: white;
+    padding: 5px;
+    border: 0;
+}

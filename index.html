@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table id="table-add-product">
+        <tr>
+            <th>Name</th>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td><input type="number" id="price"></td>
+        </tr>
+        <tr>
+            <th>Quantity</th>
+            <td><input type="number" id="quantity"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="addProduct()" id="submit-add-product">Add</button>
+                <button onclick="updateProduct()" hidden id="submit-edit-product">Update</button>
+
+            </td>
+        </tr>
+    </table>
+     <table id="table-list-product">
+         <tr class="t-header">
+             <th>STT</th>
+             <th>Name</th>
+             <th>Price</th>
+             <th>Quantity</th>
+             <th></th>
+             <th></th>
+         </tr>
+         <tbody id="list-product">
+
+         </tbody>
+     </table>
+     <script src="my.js"></script>
+</body>
+</html>
