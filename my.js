@@ -84,3 +84,10 @@ function updateProduct() {
     document.getElementById('submit-edit-product').hidden = true;
 }
 
+// btvn: 
+/*
+b1: thực hiện kiểm tra dữ liệu đầu vào -> input k nhập gì -> báo đỏ
+b2: Tích vào ô checkbox -> không cho bấm vào nút edit vs delete
+b3: thực hiện chức năng sắp xếp các phần tử theo giá tăng or giảm dần
+*/
+
