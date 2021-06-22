@@ -16,6 +16,7 @@ function display() {
             html += '</td>';
         }
 
+        html += '<td><input type="checkbox"/></td>'
         html += '<td><button onclick="deleteProduct('+i+')" class="delete-product">Delete</button></td>'
         html += '<td><button onclick="editProduct('+i+')" class="edit-product">Edit</button></td>'
 
@@ -36,31 +37,50 @@ function deleteProduct(index) {
 }
 
 function addProduct() {
-    let name = document.getElementById('name').value;
-    let price = document.getElementById('price').value;
-    let quantity = document.getElementById('quantity').value;
-
+    let name = getValueElement('name');
+    let price = getValueElement('price');
+    let quantity = getValueElement('quantity');
     let product = [name, price, quantity];
     products.push(product);
-
     display();
     clearInput();
-
 }
 
 function clearInput() {
-    document.getElementById('name').value = '';
-    document.getElementById('price').value = '';
-    document.getElementById('quantity').value = ''
+    setValueElement('name', '');
+    setValueElement('price', '');
+    setValueElement('quantity', '');
 }
 
 function editProduct(index){
     let productEdit = products[index];
-    document.getElementById('name').value = productEdit[0];
-    document.getElementById('price').value = productEdit[1];
-    document.getElementById('quantity').value = productEdit[2];
-
+    setValueElement('name', productEdit[0]);
+    setValueElement('price', productEdit[1]);
+    setValueElement('quantity', productEdit[2]);
     document.getElementById('submit-add-product').hidden = true;
     document.getElementById('submit-edit-product').hidden = false;
-
+    setValueElement('submit-edit-product', index);
 }
+
+function setValueElement(idElement, newValue) {
+    document.getElementById(idElement).value = newValue;
+}
+
+function getValueElement(idElement) {
+    let value = document.getElementById(idElement).value;
+    return value;
+}
+
+function updateProduct() {
+    let index = document.getElementById('submit-edit-product').value;
+    let name = getValueElement('name');
+    let price = getValueElement('price');
+    let quantity = getValueElement('quantity');
+    let product = [name, price, quantity];
+    products[index] = product;
+    display();
+    clearInput();
+    document.getElementById('submit-add-product').hidden = false;
+    document.getElementById('submit-edit-product').hidden = true;
+}
+
